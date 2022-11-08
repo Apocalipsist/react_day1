@@ -1,7 +1,12 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 export default function Button(props) {
-  return (
-    <button className={`btn btn-${props.color} w-100`}>+{props.step}</button>
-  )
+    const [count,setCount] = useState(0);
+    console.log(count);
+    function handleClick(){
+        setCount(count + props.step)
+    };
+     return (
+        <button className={`btn btn-${props.color} w-100`} onClick={handleClick}>+{props.step} - {count}</button>
+    )
 }
